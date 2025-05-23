@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    display: flex;
+    text-align: center;
+    min-height: 100vh;
+    flex-direction: column;
+    color: #f0f8ff;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+}
+
+.app-header {
+    padding: 32px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #6441a5, #2a0845);
+}
+
+.app-header h1 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.app-main {
+    flex: 1;
+    gap: 32px;
+    padding: 32px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.app-main img {
+    width: 180px;
+    height: auto;
+    max-width: 80%;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+}
+
+.app-main figcaption {
+    color: #bbb;
+    margin-top: 8px;
+}
+
+.app-main .list-container {
+    width: 600px;
+    display: flex;
+    max-width: 80%; /* Consider if you still need this or if 98% should override it */
+    padding: 16px 24px;
+    border-radius: 8px;
+    flex-direction: column;
+    background: #2c2c3f;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.app-main .list-container .input-aria form {
+    display: flex;
+    border-radius: 32px;
+    background: #1e1e2f;
+    transition: box-shadow 0.3s ease;
+}
+
+.app-main .list-container .input-aria form:focus-within {
+    box-shadow: 0 0 10px #6441a5;
+}
+
+.app-main .list-container .input-aria form input {
+    width: 90%;
+    height: 45px;
+    outline: none;
+    border: none;
+    padding: 0 15px;
+    font-size: 16px;
+    color: #f0f8ff;
+    background: transparent;
+    border-radius: 30px 0 0 30px;
+}
+
+.app-main .list-container .input-aria form button {
+    width: 10%;
+    border: none;
+    height: 45px;
+    margin: 0 5px;
+    outline: none;
+    padding: 0 5px;
+    color: #f0f8ff;
+    background: transparent;
+    border-radius: 0 30px 30px 0;
+}
+
+.app-main .list-container .input-aria form button span {
+    font-size: 32px;
+}
+
+.app-main .list-container .items {
+    display: flex;
+    flex-direction: column;
+    transition: margin 0.3s ease, gap 0.3s ease;
+}
+
+.app-main .list-container .items.has-tasks {
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.app-main .list-container .item {
+    gap: 20px;
+    display: flex;
+    min-height: 70px;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 10px;
+    align-items: center;
+    background: #1e1e2f;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.app-main .list-container .item:hover {
+    transform: scale(1.03);
+}
+
+.app-main .list-container .item.true {
+    color: #adff2f;
+    opacity: 0.8;
+}
+
+.app-main .list-container .item.true h3 {
+    text-decoration: line-through;
+}
+
+.app-main .list-container .item .item-title h3 {
+    text-align: left;
+}
+
+.app-main .list-container .item .item-btns {
+    gap: 10px;
+    display: flex;
+}
+
+.app-main .list-container .item .circular {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: #eee;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.app-main .list-container .item .circular:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.548);
+}
+
+.app-main .list-container .item button span {
+    font-size: 20px;
+}
+
+.app-footer {
+    padding: 6px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+body {
+    opacity: 0;
+    animation: fadeInPage 1s ease-in-out forwards;
+}
+
+@keyframes fadeInPage {
+    to {
+        opacity: 1;
+    }
+}
+
+.app-main .list-container .item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInItem 0.6s ease forwards;
+}
+
+@keyframes fadeInItem {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.app-main .list-container .input-aria form input {
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.app-main .list-container .input-aria form:focus {
+    box-shadow: 0 0 12px #6441a5;
+    background-color: #2c2c3f;
+}
+
+.app-main .list-container .item .circular {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.app-main .list-container .item .circular:hover {
+    transform: scale(1.1);
+    background-color: #d8d8d8;
+}
+
+.container,
+.app-header,
+.app-main,
+.list-container {
+    transition: all 0.4s ease;
+}
+
+@media(max-width: 480px) {
+    .app-main .list-container {
+        width: 98%;
+        max-width: none;
+    }
+    .app-main figcaption {
+        font-size: 14px;
+    }
+    .app-main .list-container .input-aria form input {
+        width: 80%;
+        padding-right: 0;
+    }
+    .app-main .list-container .input-aria form button {
+        width: 20%;
+        padding-right: 0;
+    }
+    .app-main .list-container .item {
+        gap: 15px;
+    }
+    .app-main .list-container .item .item-title h3 {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .app-main .list-container .item .item-btns {
+        gap: 8px;
+    }
+    .app-main .list-container .item .circular {
+        width: 22px;
+        height: 22px;
+    }
+    .app-main .list-container .item button span {
+        font-size: 16px;
+    }    
+    .app-footer {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .app-main .list-container {
+        width: 98%; 
+    }
+    .app-main .list-container .input-aria form input {
+        width: 85%;
+        padding-right: 0;
+    }
+    .app-main .list-container .input-aria form button {
+        width: 15%;
+        padding-right: 0;
+    }
+    .app-main .list-container .item {
+        gap: 15px;
+    }
+    .app-main .list-container .item .item-title h3 {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .app-footer {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,49 @@
+<link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon"><!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="To-Do List App, Ibrahim.Dev">
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="style.css"/>
+        <title>To-Do List App</title>
+    </head>
+    <body>
+
+        <div class="container">
+            <header class="app-header">
+                <h1>To-Do List App</h1>
+            </header>
+    
+            <main class="app-main">
+
+                <section class="start-section" id="start-section">
+                    <figure>
+                        <img src="./imgs/cactus.png" alt="Nothing here yet!">
+                        <figcaption>No tasks yet. Add one below!</figcaption>
+                    </figure>
+                </section>
+
+                <section class="list-container" id="list-container">
+                    <div class="input-aria">
+                        <form id="form-action">
+                            <input type="text" id="title">
+                            <button id="add-btn" aria-label="Add Task">
+                            <span class="material-icons" id="add-edit-btn">
+                                add 
+                            </span>
+                        </button>
+                    </form>
+                    </div>
+                    <div class="items" id="tasks-container"></div>
+                </section>
+            </main>
+    
+            <footer class="app-footer">
+                <p>&copy; 2025 Ibrahim.Dev All rights reserved</p>
+            </footer>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
